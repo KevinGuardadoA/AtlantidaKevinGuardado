@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "d0f7d8dd-466f-4edd-876e-3af9348f243f",
+		"name": "Estado de cuenta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32065227"
+	},
+	"item": [
+		{
+			"name": "movimientos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44388/api/movimientos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44388",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "optener tarjeta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44388/api/tarjetas/4287469820103847",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44388",
+					"path": [
+						"api",
+						"tarjetas",
+						"4287469820103847"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movimientos agregar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idUsuario\": 1,\r\n  \"idTarjeta\": 1,\r\n  \"idTipoTransaccion\": 1,\r\n  \"monto\": 100.00,\r\n  \"descripcion\": \"pago\",\r\n  \"fecha\": \"2024-01-24\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44388/api/movimientos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44388",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar tarjeta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"idUsuario\": 1,\r\n  \"saldo\": 100,\r\n  \"limite\": 1000,\r\n  \"disponible\": 900,\r\n  \"tasaInteres\": 20,\r\n  \"numeroTarjeta\": \"4287469820103847\",\r\n  \"ccv\": \"295\",\r\n  \"expedicion\": \"05/23\",\r\n  \"vencimiento\": \"05/28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44388/api/tarjetas/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44388",
+					"path": [
+						"api",
+						"tarjetas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movimientos de tarjeta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44388/api/movimientos/tarjeta/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44388",
+					"path": [
+						"api",
+						"movimientos",
+						"tarjeta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
